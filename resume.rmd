@@ -56,9 +56,9 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this resume online with links at __")
+  cat("View this resume online with links at _https://atang35.github.io/Atang-Resume/_")
 } else {
-  cat("[<i class='fas fa-download'></i> Download a PDF of this CV]()")
+  cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/atang35/Atang-Resume/blob/main/cv.pdf)")
 }
 ```
 
@@ -88,7 +88,7 @@ Disclaimer {#disclaimer}
 
 Made with the R package [**pagedown**](https://github.com/rstudio/pagedown). 
 
-The source code is available at []().
+The source code is available at [https://github.com/atang35/Atang-Resume/blob/main/cv.pdf](https://github.com/atang35/Atang-Resume/blob/main/cv.pdf).
 
 Last updated on `r Sys.Date()`.
 

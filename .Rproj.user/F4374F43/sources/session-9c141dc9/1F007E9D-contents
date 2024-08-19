@@ -80,7 +80,7 @@ CV |> print_skill_bars()
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Last updated on `r Sys.Date()`.
+Last updated: `r format(Sys.Date(), format = "%B %Y")`.
 
 
 
