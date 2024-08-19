@@ -1,0 +1,6 @@
+"0","if(params$pdf_mode){"
+"0","  cat(""View this CV online with links at __"")"
+"0","} else {"
+"0","  cat(""[<i class='fas fa-download'></i> Download a PDF of this CV]()"")"
+"0","}"
+"1","View this CV online with links at __"
