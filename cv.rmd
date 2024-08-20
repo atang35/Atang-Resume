@@ -13,7 +13,7 @@ output:
 
 ```{r, include=FALSE}
 knitr::opts_chunk$set(
-  results='asis', 
+  results = 'asis', 
   echo = FALSE
 )
 
@@ -52,7 +52,7 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 
 ```{r}
-if(params$pdf_mode){
+if (params$pdf_mode) {
   cat("View this CV online with links at __")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV]()")
@@ -63,7 +63,8 @@ Contact {#contact}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV |> print_contact_info()
+CV |> 
+  print_contact_info()
 ```
 
 
@@ -72,7 +73,8 @@ Language Skills {#skills}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV |> print_skill_bars()
+CV |>
+  print_skill_bars()
 ```
 
 
@@ -98,11 +100,13 @@ CV <- print_text_block(CV, "intro")
 <br>
 <br>
 
-Education {data-icon=graduation-cap data-concise=true}
+
+Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
 
+
 ```{r}
-CV <- print_section(CV, 'education')
+CV <- print_section(CV, 'industry_positions')
 ```
 
 
@@ -114,18 +118,8 @@ Projects {data-icon=diagram-project}
 CV <- print_section(CV, 'projects')
 ```
 
-
-
-Experience {data-icon=suitcase}
---------------------------------------------------------------------------------
-
-
-```{r}
-CV <- print_section(CV, 'industry_positions')
-```
-
-<!-- These breaks just force a new page so section doesnt get cut off -->
-
+<br>
+<br>
 
 
 Research Experience {data-icon=laptop}
@@ -135,8 +129,7 @@ Research Experience {data-icon=laptop}
 CV <- print_section(CV, 'research_positions')
 ```
 
-<br>
-<br>
+
 
 Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
@@ -147,10 +140,14 @@ Teaching Experience {data-icon=chalkboard-teacher}
 CV <- print_section(CV, 'teaching_positions')
 ```
 
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
 
+```{r}
+CV <- print_section(CV, 'education')
+```
 
-
-
+<!-- These breaks just force a new page so section doesnt get cut off -->
 
 <br>
 <br>
@@ -162,8 +159,6 @@ Awards {data-icon=award}
 ```{r}
 CV <- print_section(CV, 'awards')
 ```
-
-
 
 
 
