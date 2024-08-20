@@ -7,6 +7,10 @@
         {
             "columnIndex": 2,
             "ascending": true
+        },
+        {
+            "columnIndex": 3,
+            "ascending": false
         }
     ],
     "path": "~/Documents/Miscelleneous/Job-Search/Atang-Resume"
