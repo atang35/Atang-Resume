@@ -21,7 +21,7 @@ source("cv_printing_functions.r")
 
 # Read in all data and initialize a CV printer object
 CV <- create_CV_object(
-  data_location = "https://docs.google.com/spreadsheets/d/1giJe9kPDmodxkWV-ueerneTHiHGgHzxER71D6SM53uU/edit?pli=1&gid=0#gid=0",  
+  data_location = "https://docs.google.com/spreadsheets/d/1eh8Yjwp-Uw6k3vkR5IsSS6c2Mk-esiIz7L-0sQ5hNCE/edit?gid=917338460#gid=917338460",  
   pdf_mode = params$pdf_mode
 )
 
@@ -30,7 +30,7 @@ CV <- create_CV_object(
 
 ```{r}
 # When in pdf export mode the little dots are unaligned, so fix that with some conditional CSS.
-if (params$pdf_mode) {
+if(params$pdf_mode) {
     cat("
 <style>
 :root{
@@ -53,7 +53,7 @@ datadrivencv::build_network_logo(CV$entries_data)
 
 ```{r}
 if(params$pdf_mode){
-  cat("View this resume online with links at https://atang35.github.io/Atang-Resume/")
+  cat("View this CV online with links at https://atang35.github.io/Atang-Resume")
 } else {
   cat("[<i class='fas fa-download'></i> Download a PDF of this CV](https://github.com/atang35/Atang-Resume/blob/main/cv.pdf)")
 }
@@ -73,7 +73,7 @@ Language Skills {#skills}
 --------------------------------------------------------------------------------
 
 ```{r}
-CV |>
+CV |> 
   print_skill_bars()
 ```
 
@@ -82,7 +82,8 @@ CV |>
 Disclaimer {#disclaimer}
 --------------------------------------------------------------------------------
 
-Last updated: `r format(Sys.Date(), format = "%B %Y")`.
+
+Last updated on `r format(Sys.Date(), format = "%B %Y")`.
 
 
 
@@ -97,9 +98,6 @@ Atang Mahlomaholo {#title}
 CV <- print_text_block(CV, "intro") 
 ```
 
-<br>
-<br>
-
 
 Experience {data-icon=suitcase}
 --------------------------------------------------------------------------------
@@ -109,17 +107,25 @@ Experience {data-icon=suitcase}
 CV <- print_section(CV, 'industry_positions')
 ```
 
+<!-- These breaks just force a new page so section doesnt get cut off -->
+<br>
+<br>
+<br>
 
 Projects {data-icon=diagram-project}
 --------------------------------------------------------------------------------
-
 
 ```{r}
 CV <- print_section(CV, 'projects')
 ```
 
-<br>
-<br>
+Education {data-icon=graduation-cap data-concise=true}
+--------------------------------------------------------------------------------
+
+```{r}
+CV <- print_section(CV, 'education')
+```
+
 
 
 Research Experience {data-icon=laptop}
@@ -135,29 +141,8 @@ Teaching Experience {data-icon=chalkboard-teacher}
 --------------------------------------------------------------------------------
 
 
-
 ```{r}
 CV <- print_section(CV, 'teaching_positions')
-```
-
-Education {data-icon=graduation-cap data-concise=true}
---------------------------------------------------------------------------------
-
-```{r}
-CV <- print_section(CV, 'education')
-```
-
-<!-- These breaks just force a new page so section doesnt get cut off -->
-
-<br>
-<br>
-
-
-Awards {data-icon=award}
---------------------------------------------------------------------------------
-
-```{r}
-CV <- print_section(CV, 'awards')
 ```
 
 
